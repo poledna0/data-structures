@@ -5,3 +5,9 @@ edition = "2024"
 
 [dependencies]
 rand = "0.9.2"
+[profile.release]
+opt-level = 3       # nível máximo
+lto = "fat"         # link-time optimization
+codegen-units = 1   # menos paralelismo, mas mais otimização cruzada
+strip = true        # remove símbolos
+panic = "abort"     # elimina código de unwinding
