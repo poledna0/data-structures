@@ -1,7 +1,7 @@
 use rand::prelude::*;
 use std::time::Instant;
 
-fn bubble_sort_classico(vetor: &mut [u16]) {
+fn bubble_sort_classico(vetor: &mut [u32]) {
     let tam = vetor.len();
     for i in 0..tam {
         for j in 0..(tam - i - 1) {
@@ -14,7 +14,7 @@ fn bubble_sort_classico(vetor: &mut [u16]) {
     }
 }
 
-fn bubble_sort_adaptativo(vetor: &mut [u16]) {
+fn bubble_sort_adaptativo(vetor: &mut [u32]) {
     let tam = vetor.len();
     for i in 0..tam {
         let mut houve_troca = false;
@@ -32,17 +32,17 @@ fn bubble_sort_adaptativo(vetor: &mut [u16]) {
     }
 }
 
-fn popula_vec(refvec: &mut [u16]){
+fn popula_vec(refvec: &mut [u32]){
     let mut rng = rand::rng();
     for i in 0..refvec.len(){
-        refvec[i] = rng.random::<u16>();    
+        refvec[i] = rng.random::<u32>();    
     }
     
 }
 
 fn main(){
-    let mut vec1: Vec<u16> = vec![0; 50_000];
-    let mut vec2: Vec<u16> = vec![0; 50_000];
+    let mut vec1: Vec<u32> = vec![0; 50_000];
+    let mut vec2: Vec<u32> = vec![0; 50_000];
 
     popula_vec(&mut vec1);
     popula_vec(&mut vec2);
