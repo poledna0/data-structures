@@ -85,16 +85,16 @@ fn main() {
 
 	// Inserção de 10 elementos (com colisões)
 	let dados = vec![
-		("abcdefghij", "Valor para abcdefghij"),
-		("klmnopqrst", "Valor para klmnopqrst"),
-		("uvwxyzabcd", "Valor para uvwxyzabcd"),
-		("mnopqrstuv", "Valor para mnopqrstuv"),
-		("abcdefghik", "Valor para abcdefghik"),
-		("klmnopqrsu", "Valor para klmnopqrsu"),
-		("uvwxyzabce", "Valor para uvwxyzabce"),
-		("mnopqrstuw", "Valor para mnopqrstuw"),
-		("abcdefghil", "Valor para abcdefghil"),
-		("klmnopqrsw", "Valor para klmnopqrsw"),
+		("abcdefghijabcdefghij", "Valor para abcdefghijabcdefghij"),
+		("klmnopqrstabcdefghij", "Valor para klmnopqrstabcdefghij"),
+		("uvwxyzabcdabcdefghij", "Valor para uvwxyzabcdabcdefghij"),
+		("mnopqrstuvabcdefghij", "Valor para mnopqrstuvabcdefghij"),
+		("abcdefghikabcdefghij", "Valor para abcdefghikabcdefghij"),
+		("klmnopqrsuabcdefghij", "Valor para klmnopqrsuabcdefghij"),
+		("uvwxyzabceabcdefghij", "Valor para uvwxyzabceabcdefghij"),
+		("mnopqrstuwabcdefghij", "Valor para mnopqrstuwabcdefghij"),
+		("abcdefghilabcdefghij", "Valor para abcdefghilabcdefghij"),
+		("klmnopqrswabcdefghij", "Valor para klmnopqrswabcdefghij"),
 	];
 
 	for (chave, valor) in dados.iter() {
@@ -104,7 +104,7 @@ fn main() {
 	println!("\nTabela Hash após inserções:");
 	tabela.exibir();
 
-	let busca = "klmnopqrst";
+	let busca = "klmnopqrstabcdefghij";
 	println!("\nBuscando chave '{}':", busca);
 	match tabela.buscar(busca) {
 		Some(valor) => println!("Encontrado: {}", valor),
@@ -112,7 +112,7 @@ fn main() {
 	}
 
 	// Remoção
-	let remover = "klmnopqrst";
+	let remover = "klmnopqrstabcdefghij";
 	println!("\nRemovendo chave '{}':", remover);
 	if tabela.remover(remover) {
 		println!("Removido com sucesso!");
